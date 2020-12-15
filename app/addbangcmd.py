@@ -91,9 +91,8 @@ if __name__ == "__main__":
     if len(os.sys.argv) <= 2:
         print("Usage: addbangcmd.py --add|--remove <directory>")
         exit()
-    else:
-        option = os.sys.argv[1]
-        dir = os.sys.argv[2]
+    option = os.sys.argv[1]
+    dir = os.sys.argv[2]
     print("searching for %s files in %s" % (filetype, dir))
     files = getListOfFiles(dir, filetype)
     total = len(files)
