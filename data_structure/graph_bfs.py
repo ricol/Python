@@ -1,4 +1,6 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 import collections
 
 def access(node):
@@ -15,7 +17,6 @@ def bfs(graph, root):
                 visited.add(neighbour) 
                 access(neighbour)
                 queue.append(neighbour) 
-
 
 if __name__ == '__main__':
     graph = {0: [1, 2], 1: [2], 2: [3], 3: [1,2]} 

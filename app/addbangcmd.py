@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import os
@@ -7,6 +7,7 @@ import os
 
 CMD = '#!/usr/bin/python'
 CMD_LOCAL = '#!/usr/local/bin/python'
+TO = "#!/usr/bin/env python"
 CMD_CODING_UTF_8 = "#-*- coding: utf-8 -*-"
 CMD_CODING_UTF = "#-*- coding:utf -*-"
 
@@ -29,6 +30,7 @@ def remove(data):
     while len(lines) > 0 and \
         (lines[0] == CMD or 
          lines[0] == CMD_LOCAL or 
+		 lines[0] == TO or
          ("coding" in lines[0] and "utf" in lines[0]) or 
          "usr/bin/" in lines[0] or 
          lines[0] == ''):
@@ -59,13 +61,13 @@ def process(dir, data, add=True):
     if add: 
         lines = data.split('\n')
         if len(lines) > 0 and \
-        lines[0] == CMD_LOCAL and \
+        lines[0] == TO and \
         lines[1] == CMD_CODING_UTF_8 and \
         lines[2] == '': 
             return False
         new_data, _ = remove(data)
         lines = new_data.split('\n')
-        lines.insert(0, CMD_LOCAL)
+        lines.insert(0, TO)
         lines.insert(1, CMD_CODING_UTF_8)
         lines.insert(2, '')
         return save('\n'.join(lines))
@@ -86,11 +88,12 @@ def save(content):
 if __name__ == "__main__":
     dir = "./"
     filetype = ".py"
-    if len(os.sys.argv) <= 1:
-        print("Usage: addbangcmd.py --add|--remove")
+    if len(os.sys.argv) <= 2:
+        print("Usage: addbangcmd.py --add|--remove <directory>")
         exit()
     else:
         option = os.sys.argv[1]
+        dir = os.sys.argv[2]
     print("searching for %s files in %s" % (filetype, dir))
     files = getListOfFiles(dir, filetype)
     total = len(files)

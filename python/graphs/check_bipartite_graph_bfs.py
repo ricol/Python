@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Check whether Graph is Bipartite or Not using BFS

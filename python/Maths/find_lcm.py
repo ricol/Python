@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 def find_lcm(num_1, num_2):

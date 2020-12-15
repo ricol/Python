@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Newton's Method - https://en.wikipedia.org/wiki/Newton%27s_method

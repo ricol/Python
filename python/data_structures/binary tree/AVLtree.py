@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 '''
@@ -240,7 +240,7 @@ class AVLtree:
         getheight(None)
         print("****")
         self.getheight()
-        
+
 if __name__ == "__main__":
     t = AVLtree()
     t.traversale()

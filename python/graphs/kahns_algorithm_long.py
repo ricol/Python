@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Finding longest distance in Directed Acyclic Graph using KahnsAlgorithm

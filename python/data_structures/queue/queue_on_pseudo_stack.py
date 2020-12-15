@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 """Queue represented by a pseudo stack (represented by a list with pop and append)"""

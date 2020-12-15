@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Kahn's Algorithm is used to find Topological ordering of Directed Acyclic Graph using BFS

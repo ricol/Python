@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Greater Common Divisor - https://en.wikipedia.org/wiki/Greatest_common_divisor

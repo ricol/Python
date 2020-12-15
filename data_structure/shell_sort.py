@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 import funs
 import random
@@ -15,7 +16,6 @@ def shellSort(array, n):
                 j -= gap
 
             array[j] = temp
-
 
 LEN = int(1e4)
 print 'generating...'

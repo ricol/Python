@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # lower–upper (LU) decomposition - https://en.wikipedia.org/wiki/LU_decomposition

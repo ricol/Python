@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 print "demo..."
 x = 1
@@ -9,7 +10,6 @@ def f():
     print x
 
 f()
-
 
 print "demo1..."
 

@@ -1,7 +1,8 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 class A:
-	
+
 	def __init__(self, index, num):
 		self.data = [0 for _ in range(10)]
 		self.data[index] = num

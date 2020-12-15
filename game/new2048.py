@@ -1,19 +1,17 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 # 作者：魏明泽
 # 参考网址: http://2048game.com/
- 
- 
+
 import math
 import random
- 
- 
+
 __mataclass__ = type  # 使用新式类
- 
- 
+
 # 此类为地图模块封装的类
 class map2048():
- 
+
     # 重新设置游戏数据
     def reset(self):
         self.__row = 4  # 行数
@@ -27,10 +25,10 @@ class map2048():
         # self.data = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
         self.fill2()
         self.fill2()
- 
+
     def __init__(self):
         self.reset()
- 
+
     # 获取没有数字的位置的个数
     def get_space_count(self):
         """
@@ -40,7 +38,7 @@ class map2048():
         for r in self.data:
             count += r.count(0)
         return count
- 
+
     # 获取游戏的得数。
     def get_score(self):
         s = 0
@@ -48,7 +46,7 @@ class map2048():
             for c in r:
                 s += 0 if c < 4 else c * int((math.log(c, 2) - 1.0))
         return s
- 
+
     # 填充2到空位置，如果填度成功返回True,如果已满，则返回False,
     def fill2(self):
         blank_count = self.get_space_count()
@@ -64,7 +62,7 @@ class map2048():
                         r[ci] = 2
                         return True
                     offset += 1
- 
+
     # 判断游戏是否结束
     def is_gameover(self):
         for r in self.data:
@@ -82,7 +80,7 @@ class map2048():
                     return False
         # 以上都没有，则游戏结束
         return True
- 
+
     # 2048游戏的左移动 (采用"贾琳倩"美女老师的方法进行移动)
     def left(self):
         # moveflag 是否成功移动数字标志位,如果有移动则为真值,原地图不变则为假值
@@ -111,7 +109,7 @@ class map2048():
                         r[c] = r[c + 1]
                         r[c + 1] = 0
         return moveflag
- 
+
     # 游戏右移操作
     def right(self):
         for r in self.data:
@@ -120,7 +118,7 @@ class map2048():
         for r in self.data:
             r.reverse()
         return moveflag
- 
+
     # 游戏上移操作
     def up(self):
         # moveflag 是否成功移动数字标志位,如果有移动则为真值,原地图不变则为假值
@@ -149,27 +147,24 @@ class map2048():
                         self.data[r][c] = self.data[r + 1][c]
                         self.data[r + 1][c] = 0
         return moveflag
- 
+
     # 游戏下移操作
     def down(self):
         self.data.reverse()
         moveflag = self.up()
         self.data.reverse()
         return moveflag
- 
- 
- 
+
 import sys
- 
+
 if (sys.version_info > (3, 0)):
     from tkinter import *
     from tkinter import messagebox
 else:
     from Tkinter import *
- 
- 
+
 game = map2048()
- 
+
 keymap = {
     'a': game.left,
     'd': game.right,
@@ -181,7 +176,7 @@ keymap = {
     'Down': game.down,
     'q': exit,
 }
- 
+
 game_bg_color = "#bbada0"
 mapcolor = {
     0: ("#cdc1b4", "#776e65"),
@@ -199,16 +194,14 @@ mapcolor = {
     4096: ("#ae84a8", "#f9f6f2"),
     8192: ("#b06ca8", "#f9f6f2"),
 }
- 
+
 # 游戏各方块的lable数据
 map_labels = []
- 
- 
+
 # 鼠标按下处理函数
 def on_mouse_down(event):
     print("clicked at", event.x, event.y)
- 
- 
+
 # 键盘按下处理函数
 def on_key_down(event):
     keysym = event.keysym
@@ -223,8 +216,7 @@ def on_key_down(event):
         else:
             game.reset()
             update_ui()
- 
- 
+
 # 刷新界面函数
 def update_ui():
     # 更改各个Label的设置
@@ -236,13 +228,12 @@ def update_ui():
             label['bg'] = mapcolor[number][0]
             label['foreground'] = mapcolor[number][1]
     label_score['text'] = str(game.get_score())
- 
- 
+
 # 以下为2048的界面
 root = Tk()
 root.title('2048')
 # root.iconbitmap('./favicon.ico')  # 48x48 ico bitmap
- 
+
 frame = Frame(root, width=300, height=300, bg=game_bg_color)
 frame.grid(sticky=N + E + W + S)
 # 按键事件见：http://blog.csdn.net/qq_25600055/article/details/46942035
@@ -256,8 +247,7 @@ frame.bind("<Key>", on_key_down)
 # 以下绑定鼠标抬起事件
 frame.bind("<ButtonRelease-1>", on_mouse_down)
 # 见 :http://blog.csdn.net/wjciayf/article/details/50550947
- 
- 
+
 # 初始化图形界面
 for r in range(len(game.data)):
     row = []
@@ -277,19 +267,17 @@ label.grid(row=bottom_row, column=0, padx=5, pady=5)
 label_score = Label(frame, text='0', font=("黑体", 30, "bold"),
                     bg="#bbada0", fg="#ffffff")
 label_score.grid(row=bottom_row, columnspan=2, column=1, padx=5, pady=5)
- 
- 
+
 def reset_game():
     game.reset()
     update_ui()
- 
- 
+
 # restart_button = Button(frame, text='重新开始', command=reset_game)
 restart_button = Button(frame, text='重新开始', font=("黑体", 16, "bold"),
                         # width=4, height=2,
                         bg="#8f7a66", fg="#f9f6f2", command=reset_game)
 restart_button.grid(row=bottom_row, column=3, padx=5, pady=5)
- 
+
 update_ui()
- 
+
 root.mainloop()

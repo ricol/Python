@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 #!/usr/local/bin/python3
 
 def myrange(arg1, arg2 = None, step = 1):

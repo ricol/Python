@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Squirrel Eat Squirrel (a 2D Katamari Damacy clone)

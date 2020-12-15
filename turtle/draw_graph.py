@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 """ Provides the plot function that draws the graph of a mathematical
      function on a Cartesian coordinate plane. """
 import turtle

@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 class _MapEntry:
 
@@ -63,7 +64,7 @@ class HashMap:
 
         # print("_locateSlot for key: %s -> slot: %d" % (key, slot))
         return slot
-    
+
     def _findNewSlot(self, key):
         slot = self._hash1(key)
         step = self._hash2(key)
@@ -73,7 +74,7 @@ class HashMap:
 
         # print("_findNewSlot for key: %s -> slot: %d" % (key, slot))
         return slot
-    
+
     def _rehash(self):
         oriTable = self._table
         newSize = len(self._table) * 2 + 1

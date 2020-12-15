@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 #!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3

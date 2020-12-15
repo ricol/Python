@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 import funs
 
@@ -46,10 +47,10 @@ class MaxHeap:
 		if largest != ndx:
 			self._elements[ndx], self._elements[largest] = self._elements[largest], self._elements[ndx]
 			self._siftDown(largest)
-			
+
 	def __str__(self):
 		return str(self._elements)
-	
+
 	def show(self):
 		s = []
 		q = []
@@ -62,7 +63,7 @@ class MaxHeap:
 			if l < self.capacity(): q.append(l)
 			if r < self.capacity(): q.append(r)
 		print ",".join(s)
-		
+
 	def __iter__(self):
 		self._index = 0
 		return self

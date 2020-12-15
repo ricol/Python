@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 def heapify(arr, n, i):
 	largest = i
@@ -30,7 +31,7 @@ def deleteNode(array, num):
 	for i in range(0, size):
 		if num == array[i]:
 			break
-	
+
 	array[i], array[size - 1] = array[size - 1], array[i]
 
 	array.remove(size - 1)
@@ -135,7 +136,7 @@ class BPriorityQueue:
 	def enqueue(self, item, priority):
 		self._qSize += 1
 		self._qLevels[priority].enqueue(item)
-	
+
 	def dequeue(self):
 		if self.is_empty():
 			return None
