@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
-
 
 # We just subclass Rectangle so that it can be called with an Axes
 # instance, causing the rectangle to update its shape to match the
@@ -14,7 +12,6 @@ class UpdatingRect(Rectangle):
     def __call__(self, ax):
         self.set_bounds(*ax.viewLim.bounds)
         ax.figure.canvas.draw_idle()
-
 
 # A class that will regenerate a fractal set as we zoom in, so that you
 # can actually see the increasing detail.  A box in the left panel will show

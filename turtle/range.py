@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
-
 def myrange(arg1, arg2 = None, step = 1):
 	if arg2 != None:
 		begin = arg1
@@ -14,7 +12,7 @@ def myrange(arg1, arg2 = None, step = 1):
 	while i != end:
 		yield i
 		i += step
-	
+
 print('0 to 9:', end=' ')
 for i in myrange(10):
 	print(i, end=' ')

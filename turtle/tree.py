@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
-
 def tree(height):
 	"""
 	Draws a tree of a given height.

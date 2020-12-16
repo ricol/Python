@@ -19,7 +19,6 @@ class CPU(object):
     def execute(self) -> None:
         print("Executing.")
 
-
 class Memory(object):
     """
     Simple memory representation.
@@ -27,14 +26,12 @@ class Memory(object):
     def load(self, position, data):
         print("Loading from {0} data: '{1}'.".format(position, data))
 
-
 class SolidStateDrive(object):
     """
     Simple solid state drive representation.
     """
     def read(self, lba, size):
         return "Some data from sector {0} with size {1}".format(lba, size)
-
 
 class ComputerFacade(object):
     """
@@ -50,7 +47,6 @@ class ComputerFacade(object):
         self.memory.load("0x00", self.ssd.read("100", "1024"))
         self.cpu.jump("0x00")
         self.cpu.execute()
-
 
 computer_facade = ComputerFacade()
 computer_facade.start()

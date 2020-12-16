@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
-#-*- coding: utf-8 -*-
-
 class Publication:
 
 	def __init__(self, code, title, author):

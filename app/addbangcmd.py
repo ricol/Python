@@ -28,11 +28,11 @@ def remove(data):
     lines = data.split('\n')
     bProcessed = False
     while len(lines) > 0 and \
-        (lines[0] == CMD or 
-         lines[0] == CMD_LOCAL or 
+        (lines[0] == CMD or
+         lines[0] == CMD_LOCAL or
 		 lines[0] == TO or
-         ("coding" in lines[0] and "utf" in lines[0]) or 
-         "usr/bin/" in lines[0] or 
+         ("coding" in lines[0] and "utf" in lines[0]) or
+         "usr/bin/" in lines[0] or "#!" in lines[0] or
          lines[0] == ''):
         lines.remove(lines[0])
         bProcessed = True
@@ -42,28 +42,28 @@ def remove(data):
     bSecondEmptyLine = False
     for line in lines:
         compact_line = line.strip()
-        if compact_line == "": 
+        if compact_line == "":
             if bEmptyLine: bSecondEmptyLine = True
             bEmptyLine = True
         else:
             bEmptyLine = False
             bSecondEmptyLine = False
-        if not bSecondEmptyLine: 
-            if bEmptyLine: 
+        if not bSecondEmptyLine:
+            if bEmptyLine:
                 new_lines.append("")
             else:
                 new_lines.append(line)
-    if bProcessed: 
+    if bProcessed:
         return '\n'.join(new_lines), True
     return data, False
 
 def process(dir, data, add=True):
-    if add: 
+    if add:
         lines = data.split('\n')
         if len(lines) > 0 and \
         lines[0] == TO and \
         lines[1] == CMD_CODING_UTF_8 and \
-        lines[2] == '': 
+        lines[2] == '':
             return False
         new_data, _ = remove(data)
         lines = new_data.split('\n')
@@ -92,6 +92,9 @@ if __name__ == "__main__":
         print("Usage: addbangcmd.py --add|--remove <directory>")
         exit()
     option = os.sys.argv[1]
+    if option not in ["--add", "--remove"]:
+        print("invalid operation!")
+        exit()
     dir = os.sys.argv[2]
     print("searching for %s files in %s" % (filetype, dir))
     files = getListOfFiles(dir, filetype)
@@ -105,7 +108,7 @@ if __name__ == "__main__":
             if process(dir, data, add=option == "--add"):
                 updated += 1
             else:
-                ignored += 1 
+                ignored += 1
     print("Result:")
     print("Total[%s]: %d" % (filetype, total))
     print("updated: %d" % updated)

@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
-
 def square_root(val):
 	""" Computer an approximation of the square root of x """
 	root = 1.0

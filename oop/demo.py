@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!/usr/local/bin/python3
-
 class A:
 	def __init__(self, x):
 		self.x = x
@@ -21,7 +19,6 @@ class D:
 	def __init__(self, **args):
 		for k in args:
 			print("args[%s]=%s" % (k, args[k]))
-
 
 a = A(1)
 b = B(2)

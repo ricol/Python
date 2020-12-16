@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-#!usr/local/bin/python
-
 def gcd(num1, num2):
 	'''this is function to calculate the greatest common divisor of two integers'''
 	min = num1 if num1 < num2 else num2

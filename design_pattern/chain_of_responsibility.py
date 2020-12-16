@@ -7,7 +7,6 @@ Chain of responsibility pattern example.
 from abc import ABCMeta, abstractmethod
 from enum import Enum, auto
 
-
 class LogLevel(Enum):
     """ Log Levels Enum."""
     NONE = auto()
@@ -18,7 +17,6 @@ class LogLevel(Enum):
     FUNCTIONAL_MESSAGE = auto()
     FUNCTIONAL_ERROR = auto()
     ALL = auto()
-
 
 class Logger(object):
     """Abstract handler in chain of responsibility pattern."""
@@ -70,7 +68,6 @@ class Logger(object):
         """
         raise NotImplementedError("You should implement this method.")
 
-
 class ConsoleLogger(Logger):
     def write_message(self, msg):
         """Overrides parent's abstract method to write to console.
@@ -79,7 +76,6 @@ class ConsoleLogger(Logger):
             msg (str): Message string.
         """
         print("Writing to console:", msg)
-
 
 class EmailLogger(Logger):
     """Overrides parent's abstract method to send an email.
@@ -90,7 +86,6 @@ class EmailLogger(Logger):
     def write_message(self, msg):
         print(f"Sending via email: {msg}")
 
-
 class FileLogger(Logger):
     """Overrides parent's abstract method to write a file.
 
@@ -99,7 +94,6 @@ class FileLogger(Logger):
     """
     def write_message(self, msg):
         print(f"Writing to log file: {msg}")
-
 
 def main():
     """Building the chain of responsibility."""
@@ -136,7 +130,6 @@ def main():
         LogLevel.FUNCTIONAL_ERROR
     )
     logger.message("OrderDispatched.", LogLevel.FUNCTIONAL_MESSAGE)
-
 
 if __name__ == "__main__":
     main()
