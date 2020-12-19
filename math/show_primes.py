@@ -1,12 +1,17 @@
-#!/usr/local/bin/env python
+#!/usr/bin/env python
+
+import gc
+from math import sqrt
 
 def is_prime(num):
+	print("checking %d..." % num)
 	if num <= 1: return False
 	if num != 2 and num % 2 == 0: return False
 
-	to = num / 2 + 1
+	to = int(round(sqrt(num)) + 1)
 	for x in range(3, to, 2):
 		if num % x == 0: return False
+		gc.collect()
 	return True
 
 if __name__ == "__main__":
