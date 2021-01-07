@@ -1,6 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import gc
 from math import sqrt
 
 def is_prime(num):
@@ -11,7 +10,6 @@ def is_prime(num):
 	to = int(round(sqrt(num)) + 1)
 	for x in range(3, to, 2):
 		if num % x == 0: return False
-		gc.collect()
 	return True
 
 if __name__ == "__main__":
