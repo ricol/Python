@@ -21,6 +21,6 @@ def sieve(n):
         if l[j] == True:
             prime.append(j)
 
-    return prime
+    return len(prime)
 
 print(sieve(n))
