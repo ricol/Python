@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-import time
-
-def fib():
+def fib(max):
 	a, b = 0, 1
 
-	while True:
+	while b < max:
 		yield b
 		a, b = b, a + b
 
-g = fib()
+max = 100
+g = fib(max)
 try:
+	print("print fabonacci sequence until %d" % max)
 	for e in g:
 		print(e)
-		time.sleep(1)
 except KeyboardInterrupt:
 	print("Calculation stopped")

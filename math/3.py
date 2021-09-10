@@ -59,15 +59,11 @@ def compute_sum4c(n):
 
 def compute_sum4d(n):
     """ Using list comprehension ."""
-    return sum([k
-               for k in range(0, n, 2)
-               ])
+    return sum([k for k in range(0, n, 2)])
 
 def compute_sum4e(n):
     """ Using another variation of list comprehension ."""
-    return sum([k
-               for k in range(0, n) if k % 2 == 0
-               ])
+    return sum([k for k in range(0, n) if k % 2 == 0])
 
 def compute_sum5(n):
     """ Using numerical python ( numpy ). This is very fast
@@ -100,8 +96,7 @@ if __name__ == "__main__":
     m = 7
     correct_result = 12
     thisresult = compute_sum1 (m)
-    print((" this result is {}, expected to be {}". format (
-          thisresult, correct_result)))
+    print((" this result is {}, expected to be {}". format(thisresult, correct_result)))
     # compare with correct result
     print("running...")
     assert thisresult == correct_result
