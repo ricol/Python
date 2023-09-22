@@ -27,35 +27,19 @@ class MyClass(object):
         return self._some_other_property
 
 o = MyClass()
-
 o.normal_method
-
 o.normal_method()
-
 o.normal_method(1, 2, x=3, y=4)
-
 o.class_method
-
 o.class_method()
-
 o.class_method(1, 2, x=3, y=4)
-
 o.static_method
-
 o.static_method()
-
 o.static_method(1, 2, x=3, y=4)
-
 o.some_property
-
 o.some_property()
-
 o.some_other_property
-
 o.some_property = "groovy"
-
 o.some_property
-
 o.some_other_property = "very groovy"
-
 o.some_other_property

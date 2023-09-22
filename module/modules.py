@@ -5,7 +5,6 @@ import math
 
 content = dir(math)
 print(content)
-
 print(math.pi)
 
 import mymodule
