@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 '''Conway's Game Of Life, Author Anurag Kumar(mailto:anuragkumarak95@gmail.com) 

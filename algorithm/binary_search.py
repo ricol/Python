@@ -13,7 +13,7 @@ def binary_search(list, data, start, end):
     else:
         return mid
 
-SIZE = 100000
+SIZE = int(1e5)
 data = [random.randint(1, SIZE) for _ in range(SIZE)]
 data.sort()
 num = random.randint(1, SIZE)
