@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 '''Conway's Game Of Life, Author Anurag Kumar(mailto:anuragkumarak95@gmail.com) 
@@ -35,6 +35,7 @@ from matplotlib.colors import ListedColormap
 import numpy as np
 import random
 import sys
+import time
 
 usage_doc = 'Usage of script: script_nama <size_of_canvas:int>'
 
@@ -111,10 +112,12 @@ if __name__ == '__main__':
     cmap = ListedColormap(['w', 'k'])
     try:
         while True:
+            print("continue")
             c = run(c)            
             ax.matshow(c, cmap=cmap)
             fig.canvas.draw()
             ax.cla() 
+            input("press any key to continue...")
     except KeyboardInterrupt:
         # do nothing.
         pass

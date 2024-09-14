@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 '''Author Anurag Kumar | anuragkumarak95@gmail.com | git/anuragkumarak95

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # PI = 4 * (1 / 1 - 1 / 3 + 1 / 5 - 1 / 7 + ...)

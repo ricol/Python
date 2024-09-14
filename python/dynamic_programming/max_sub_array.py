@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 """
@@ -41,6 +41,7 @@ def find_max_cross_sum(A, low, mid, high):
     return max_left, max_right, (left_sum + right_sum)
 
 if __name__ == '__main__':
+    print("calculating...")
     inputs = [10, 100, 1000, 10000, 50000, 100000, 200000, 300000, 400000, 500000]
     tim = []
     for i in inputs:
@@ -49,6 +50,7 @@ if __name__ == '__main__':
         (find_max_sub_array(li, 0, len(li)-1))
         end = time.time()
         tim.append(end-strt)
+        print("continue...%s" % i)
     print("No of Inputs       Time Taken")    
     for i in range(len(inputs)):    
         print(inputs[i], '\t\t', tim[i])

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 def bsearch(list, val):
@@ -15,13 +15,13 @@ def bsearch(list, val):
         if list[midval] == val:
             return midval
 # Compare the value the middle most value
-    if val > list[midval]:
-        idx0 = midval + 1
-    else:
-        idxn = midval - 1
+        if val > list[midval]:
+            idx0 = midval + 1
+        else:
+            idxn = midval - 1
 
-if idx0 > idxn:
-    return None
+        if idx0 > idxn:
+            return None
 
 # Initialize the sorted list
 list = [2, 7, 19, 34, 53, 72]

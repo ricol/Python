@@ -1,8 +1,9 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 from __future__ import division
 from __future__ import print_function
+import random
 
 try:
     raw_input          # Python 2
@@ -80,11 +81,13 @@ class Heap:
         print(self.h)
 
 def main():
-    l = list(map(int, raw_input().split()))
+    LEN = int(20)
+    l = [random.randint(0, LEN) for _ in range(LEN)]
     h = Heap()
     h.buildHeap(l)
+    h.display()
     h.heapSort()
-	h.display()
+    h.display()
 
 if __name__=='__main__':
 	main()

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import hashlib
@@ -10,9 +10,9 @@ def get_md5(s):
 class User(object):
     def __init__(self, username, password):
         self.username = username
-#		self.salt = ''.join([chr(random.randint(48, 122)) for i in range(20)])
-#		self.password = get_md5(password + self.salt)
-    self.password = get_md5(password)
+        # self.salt = ''.join([chr(random.randint(48, 122)) for i in range(20)])
+        # self.password = get_md5(password + self.salt)
+        self.password = get_md5(password)
 
 db = {
     'michael': User('michael', '123456'),

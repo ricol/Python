@@ -1,11 +1,11 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 class TestIterNext(object):
     def __init__(self, data=1):
         self.data = data
 
-    def __next__(self):
+    def next(self):
         if self.data > 5:
             raise StopIteration
         else:
@@ -13,8 +13,6 @@ class TestIterNext(object):
             return self.data
 
     def __iter__(self):
-        print("iter")
         return self
 
-for t in TestIterNext():
-    print(t + ",")
+for t in TestIterNext(): print(t)

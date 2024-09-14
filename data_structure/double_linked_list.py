@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 class Node:
@@ -26,7 +26,7 @@ class doubly_linked_list:
         while (node is not None):
             print((node.data), end=' ')
             last = node
-            node = node.__next__
+            node = node.next
 
 dllist = doubly_linked_list()
 dllist.push(12)
@@ -62,10 +62,10 @@ class doubly_linked_list:
         if prev_node is None:
             return
         NewNode = Node(NewVal)
-        NewNode.next = prev_node.__next__
+        NewNode.next = prev_node.next
         prev_node.next = NewNode
         NewNode.prev = prev_node
-        if NewNode.__next__ is not None:
+        if NewNode.next is not None:
             NewNode.next.prev = NewNode
 
 # Define the method to print the linked list
@@ -74,13 +74,13 @@ class doubly_linked_list:
         while (node is not None):
             print((node.data), end=' ')
             last = node
-            node = node.__next__
+            node = node.next
 
 dllist = doubly_linked_list()
 dllist.push(12)
 dllist.push(8)
 dllist.push(62)
-dllist.insert(dllist.head.__next__, 13)
+dllist.insert(dllist.head.next, 13)
 dllist.listprint(dllist.head)
 
 # Create the node class
@@ -115,8 +115,8 @@ class doubly_linked_list:
             self.head = NewNode
             return
         last = self.head
-        while (last.__next__ is not None):
-            last = last.__next__
+        while (last.next is not None):
+            last = last.next
         last.next = NewNode
         NewNode.prev = last
         return
@@ -127,7 +127,8 @@ class doubly_linked_list:
         while (node is not None):
             print((node.data), end=' ')
             last = node
-            node = node.__next__
+            node = node.next
+        print("")
 
 dllist = doubly_linked_list()
 dllist.push(12)

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 # Function definition is here
@@ -21,3 +21,15 @@ def evaluate(f, x, y):
 print(evaluate(lambda x, y: 3 * x + y, 10, 2))
 print(evaluate(lambda x, y: 10 if x == y else 2, 5, 5))
 print(evaluate(lambda x, y: 10 if x == y else 2, 5, 3))
+
+def multiple_labmdas():
+    return [lambda x: i * x for i in range(5)]
+
+def multiple_labmdas_correct():
+    return [lambda x, i = i: i * x for i in range(5)]
+
+for l in multiple_labmdas():
+    print l(2)
+
+for l in multiple_labmdas_correct():
+    print l(2)

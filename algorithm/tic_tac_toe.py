@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 class TicTacToe:
@@ -19,7 +19,7 @@ class TicTacToe:
         if self.winner() is not None:
             raise ValueError('Game is already complete')
         self._board[i][j] = self._player
-        self._player == self.PLAYER_B if self._player == self.PLAYER_A else self.PLAYER_A
+        self._player = self.PLAYER_A if self._player == self.PLAYER_B else self.PLAYER_B
         print(self)
 
     def _is_win(self, mark):

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 def bubblesort(list):
@@ -9,8 +9,10 @@ def bubblesort(list):
             if list[idx] > list[idx + 1]:
                 list[idx], list[idx + 1] = list[idx + 1], list[idx]
 
+print("bubble sort...")
 list = [19, 2, 31, 45, 6, 11, 121, 27]
 bubblesort(list)
+print("complete.")
 print(list)
 
 def merge_sort(unsorted_list):
@@ -45,7 +47,9 @@ def merge(left_half, right_half):
 
 unsorted_list = [64, 34, 25, 12, 22, 11, 90]
 
+print("Merge sort...")
 print((merge_sort(unsorted_list)))
+print("complete.")
 
 def insertion_sort(InputList):
     for i in range(1, len(InputList)):
@@ -59,31 +63,28 @@ def insertion_sort(InputList):
         InputList[j + 1] = nxt_element
 
 list = [19, 2, 31, 45, 30, 11, 121, 27]
+print("Insertion sort...")
 insertion_sort(list)
+print("complete.")
 print(list)
 
 def shellSort(input_list):
-
     gap = len(input_list) / 2
     while gap > 0:
-
         for i in range(gap, len(input_list)):
             temp = input_list[i]
             j = i
-            # Sort the sub list for this gap
-
             while j >= gap and input_list[j - gap] > temp:
                 input_list[j] = input_list[j - gap]
                 j = j - gap
             input_list[j] = temp
-
-# Reduce the gap for the next element
-
-    gap = gap / 2
+        gap = gap / 2
 
 list = [19, 2, 31, 45, 30, 11, 121, 27]
 
+print("Shell sort...")
 shellSort(list)
+print("complete.")
 print(list)
 
 def selection_sort(input_list):
@@ -101,5 +102,7 @@ def selection_sort(input_list):
         idx]
 
 l = [19, 2, 31, 45, 30, 11, 121, 27]
+print("Selection sort...")
 selection_sort(l)
+print("complete.")
 print(l)

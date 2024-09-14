@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 class Node:
@@ -168,7 +168,7 @@ class SLinkedList:
 
         if (HeadVal is not None):
             if (HeadVal.data == Removekey):
-                self.head = HeadVal.__next__
+                self.head = HeadVal.next
                 HeadVal = None
                 return
 
@@ -176,12 +176,12 @@ class SLinkedList:
             if HeadVal.data == Removekey:
                 break
             prev = HeadVal
-            HeadVal = HeadVal.__next__
+            HeadVal = HeadVal.next
 
         if (HeadVal == None):
             return
 
-        prev.next = HeadVal.__next__
+        prev.next = HeadVal.next
 
         HeadVal = None
 
@@ -189,7 +189,7 @@ class SLinkedList:
         printval = self.head
         while (printval):
             print((printval.data), end=' ')
-            printval = printval.__next__
+            printval = printval.next
 
 llist = SLinkedList()
 llist.Atbegining("Mon")

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 from functools import reduce
@@ -59,15 +59,11 @@ def compute_sum4c(n):
 
 def compute_sum4d(n):
     """ Using list comprehension ."""
-    return sum([k
-               for k in range(0, n, 2)
-               ])
+    return sum([k for k in range(0, n, 2)])
 
 def compute_sum4e(n):
     """ Using another variation of list comprehension ."""
-    return sum([k
-               for k in range(0, n) if k % 2 == 0
-               ])
+    return sum([k for k in range(0, n) if k % 2 == 0])
 
 def compute_sum5(n):
     """ Using numerical python ( numpy ). This is very fast
@@ -100,9 +96,9 @@ if __name__ == "__main__":
     m = 7
     correct_result = 12
     thisresult = compute_sum1 (m)
-    print((" this result is {}, expected to be {}". format (
-          thisresult, correct_result)))
+    print((" this result is {}, expected to be {}". format(thisresult, correct_result)))
     # compare with correct result
+    print("running...")
     assert thisresult == correct_result
     # also check all other methods
     assert compute_sum2 (m) == correct_result
@@ -114,4 +110,6 @@ if __name__ == "__main__":
     assert compute_sum4e (m) == correct_result
     assert compute_sum5 (m) == correct_result
     # a more systematic check for many values
+    print("Testing consistency...")
     test_consistency ()
+    print("done")

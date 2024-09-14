@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 """DO NOT REMOVE THIS HEADER
@@ -79,9 +79,7 @@ lex.lex()
 
 # Process input and tokenize
 while 1:
-    input = input(
-                  "Pressing 'X' anywhere in the input will cause an exit\n >>"
-                  )  # Take user inputs
+    input = input("Pressing 'X' anywhere in the input will cause an exit\n >>")  # Take user inputs
 
     # Extract each symbol and feed it into the character
 

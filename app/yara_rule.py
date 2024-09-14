@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import operator
@@ -60,18 +60,12 @@ if __name__ == '__main__':
         for strr in rule['strings']:
             if len(strr['value']) > max_string_len:
                 max_string_len = len(strr['value'])
-                max_strings = [(rule['rule_name'], strr['name'],
-                                strr['value'])]
+                max_strings = [(rule['rule_name'], strr['name'], strr['value'])]
             elif len(strr['value']) == max_string_len:
-                max_strings.append((rule['rule_name'], strr['key'],
-                                   strr['value']))
+                max_strings.append((rule['rule_name'], strr['key'], strr['value']))
 
     print(("\nThe number of rules implemented" + str(rule_count)))
-    ordered_meta_keys = sorted(
-                               list(meta_keys.items()), key=operator.itemgetter(1), reverse=True)
-    ordered_authors = sorted(
-                             list(authors.items()), key=operator.itemgetter(1), reverse=True)
-    ordered_imps = sorted(
-                          list(imps.items()), key=operator.itemgetter(1), reverse=True)
-    ordered_tags = sorted(
-                          list(tags.items()), key=operator.itemgetter(1), reverse=True)
+    ordered_meta_keys = sorted(list(meta_keys.items()), key=operator.itemgetter(1), reverse=True)
+    ordered_authors = sorted(list(authors.items()), key=operator.itemgetter(1), reverse=True)
+    ordered_imps = sorted(list(imps.items()), key=operator.itemgetter(1), reverse=True)
+    ordered_tags = sorted(list(tags.items()), key=operator.itemgetter(1), reverse=True)

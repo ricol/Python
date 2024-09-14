@@ -1,10 +1,9 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 #from Python.Math import prime_generator
 from itertools import takewhile
 import math
- 
 
 def primeCheck(number):
     if number % 2 == 0 and number > 2:

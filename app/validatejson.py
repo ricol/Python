@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import json
@@ -40,17 +40,18 @@ if __name__ == "__main__":
 
     if total <= 0:
         print("No json file to validate.")
-    else:
-        for dir in jsonDirs:
-            with open(dir, "r") as myfile:
-                data = myfile.read()
-                msg = "Validating %s..." % dir.replace(search_dir, '')
-                print msg,
-                if json_validator(data):
-                    ok += 1
-                    print("[OK]")
-                else:
-                    error += 1
-                    print("[ERROR]")
-        print("-" * 30)
-        print("Total: %d, OK: %d, Error: %d" % (total, ok, error))
+		exit()
+
+    for dir in jsonDirs:
+        with open(dir, "r") as myfile:
+            data = myfile.read()
+            msg = "Validating %s..." % dir.replace(search_dir, '')
+            print msg,
+            if json_validator(data):
+                ok += 1
+                print("[OK]")
+            else:
+                error += 1
+                print("[ERROR]")
+    print("-" * 30)
+    print("Total: %d, OK: %d, Error: %d" % (total, ok, error))

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 class Stack:
@@ -27,7 +27,7 @@ AStack.add("Wed")
 AStack.add("Thu")
 print((AStack.peek()))
 
-class Stack:
+class Stack1:
     def __init__(self):
         self.stack = []
 
@@ -47,7 +47,7 @@ class Stack:
         else:
             return self.stack.pop()
 
-AStack = Stack()
+AStack = Stack1()
 AStack.add("Mon")
 AStack.add("Tue")
 print((AStack.remove()))
