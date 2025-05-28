@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 
 import os
 
@@ -37,7 +38,7 @@ if __name__ == '__main__':
 
 	oversize = 10 * 1024 * 1024
 	directory = sys.argv[1]
-	
+
 	if len(sys.argv) >= 3:
 		oversize = int(sys.argv[2])
 

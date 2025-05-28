@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 # from PIL import Image
 # from settings import Settings
 #
@@ -16,11 +19,6 @@
 #     x = 0
 #     y += 1
 # im.show()
-
-
-
-
-
 
 # import os
 #

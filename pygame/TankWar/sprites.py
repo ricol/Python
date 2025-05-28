@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 import time
 import random
 import pygame
 from threading import Thread
 from settings import Settings
-
 
 class BaseSprite(pygame.sprite.Sprite):
     """
@@ -28,13 +30,11 @@ class BaseSprite(pygame.sprite.Sprite):
         elif self.direction == Settings.DOWN:
             self.rect.y += self.speed
 
-
 class Bullet(BaseSprite):
 
     def __init__(self, image_name, screen):
         super().__init__(image_name, screen)
         self.speed = Settings.BULLET_SPEED
-
 
 class TankSprite(BaseSprite):
     """
@@ -123,7 +123,6 @@ class TankSprite(BaseSprite):
         t = Thread(target=self.boom)
         t.start()
 
-
 class Hero(TankSprite):
 
     def __init__(self, image_name, screen):
@@ -155,7 +154,6 @@ class Hero(TankSprite):
     def kill(self):
         self.is_alive = False
         self.boom()
-
 
 class Enemy(TankSprite):
 
@@ -206,7 +204,6 @@ class Enemy(TankSprite):
             super().update()
             # 碰墙掉头
             self.terminal -= self.speed
-
 
 class Wall(BaseSprite):
 
