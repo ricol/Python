@@ -14,10 +14,7 @@ try:
 except IOError:
     print(("There was an error writing to", file_name))
     sys.exit()
-print((
-      "Enter '",
-      file_finish,
-      ))
+print(("Enter '", file_finish))
 print("' When finished")
 while file_text != file_finish:
     file_text = eval(input("Enter text: "))
